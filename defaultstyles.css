@@ -22,11 +22,13 @@ body {
 	font-family:"Lucida Sans Unicode", "Lucida Grande", Arial, Helvetica, sans-serif;
 }
 
-#container {
-	width:960px;
-	margin:auto;
-	font-size:12px;
+.container {
+    display: flex; /* This enables flexbox on the container */
+        align-items: flex-start; /* Make items align to the top and don't stretch */
+            overflow-x: auto; /* Allows horizontal scrolling if content overflows */
+
 }
+
 #ucb {
 }
 #wrapper {
@@ -96,17 +98,31 @@ h1 {
 	-webkit-border-bottom-right-radius:10px;
 	*/
 }
-#sidebar {
-	min-width:250px;
-	float:left;
-	line-height:140%;
-	background-color:#ffffff;
-	border: 1px solid #ffffff;
-	margin-top: 0;
-	margin-right: 15px;
-	margin-bottom: 0;
-	margin-left: 15px;
+
+.sidebar {
+    flex: 0 0 400px; /* This gives both sidebars a fixed width of 200px */
+    background-color: #f4f4f4;
+    padding: 1rem;
+   /*  height: 47vh; /* Full viewport height */   
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.1);
 }
+
+.sidebar-left {
+    /* Additional styles specific to the left sidebar, if necessary */
+}
+
+.sidebar-right {
+    /* Additional styles specific to the right sidebar, if necessary */
+    box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.1); /* Adjusting the shadow direction for the right sidebar */
+}
+
+.main-content {
+    flex: 1; /* This allows the main content to take up the remaining space */
+    padding: 1rem;
+    background-color: #ffffff;
+}
+
+
 
 #sidebar2 {
 	min-width:250px;
